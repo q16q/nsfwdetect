@@ -2,7 +2,7 @@
 ## how it works
 1. someone sends a photo
 2. the bot analyzes it with a model
-3. if it flagged as NSFW, it gets deleted and resent with spoiler
+3. if it has flagged it as NSFW, it gets deleted and resent with spoiler
 ## requirements
 - [python 3.8.10](https://www.python.org/downloads/release/python-3810/)
 ## installation
