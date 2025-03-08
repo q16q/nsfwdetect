@@ -30,12 +30,8 @@ async def handle_message(message: Message):
     if message.photo:
         file = await message.bot.get_file(message.photo[-1].file_id)
         file_path = file.file_path
-        downloaded_file = await message.bot.download_file(file_path)
-
         save_fp = 'p%s.png' % file.file_id
-        with open(save_fp, 'wb') as f:
-            f.write(downloaded_file.read())
-            f.close()
+        await message.bot.download_file(file_path, destination = save_fp)
         
         # analyzing
         result = predict.classify(model, save_fp)[save_fp]
