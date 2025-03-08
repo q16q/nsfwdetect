@@ -42,7 +42,7 @@ async def handle_message(message: Message):
         if result['hentai'] >= CRITERIA or result['porn'] >= CRITERIA or result['sexy'] >= CRITERIA:
             flagged = max(result, key = result.get)
 
-            await message.answer_photo(file.file_id, caption = 'content type: %s\nfrom %s\n%s' % (flagged, message.from_user.username or message.from_user.full_name, message.caption or '(no caption)'), has_spoiler = True)
+            await message.answer_photo(file.file_id, caption = 'content type: {} ({:.2f}%)\nfrom: {}\n{}'.format(flagged, result[flagged] * 100, message.from_user.username or message.from_user.full_name, message.caption or '(no caption)'), has_spoiler = True)
             await message.delete()
         
         os.remove(save_fp)
