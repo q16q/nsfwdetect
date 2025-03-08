@@ -15,6 +15,7 @@
 2. install aiogram and python-dotenv: `python -m pip install aiogram python-dotenv`
 3. get your telegram bot token at [@BotFather](https://t.me/BotFather)
 4. create `.env` file with contents: `TOKEN=[your token]`
+5. download nsfw detection model from [here](https://github.com/GantMan/nsfw_model/releases)
 ## usage
 you can run it with `python main.py`
 ## contact
